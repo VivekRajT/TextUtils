@@ -1,0 +1,20 @@
+# Example deployment configuration
+
+runtime: nodejs12.x  # Example runtime, adjust based on your specific needs
+
+baseDirectory: .     # Base directory where your source code resides
+
+# Package directory where package.json is located
+packageDirectory: .
+
+buildCommand: npm run build  # Command to build your project
+
+publishDirectory: build/gh-pages  # Directory where built files are placed for deployment
+
+functionsDirectory: build/netlify/functions  # Directory for serverless functions (if applicable)
+
+deployLogVisibility: public  # Visibility of deployment logs
+
+# Build status visibility (if applicable)
+# buildStatus:  # Specify if there's a specific status setting you need
+
