@@ -1,20 +1,27 @@
-# Example deployment configuration
+// netlify/functions/getInfo.js
+exports.handler = async (event, context) => {
+  const data = {
+    files: [
+      "main.2bad9164.css",
+      "main.d94e7b82.js",
+      "index.html",
+      "asset-manifest.json",
+      "favicon.ico",
+      "manifest.json",
+      "robots.txt"
+    ],
+    directories: [
+      "static",
+      "css",
+      "js",
+      "android-chrome-192x192 - Copy.png",
+      "apple-touch-icon - Copy.png",
+      "apple-touch-icon.png"
+    ]
+  };
 
-runtime: nodejs12.x  # Example runtime, adjust based on your specific needs
-
-baseDirectory: .     # Base directory where your source code resides
-
-# Package directory where package.json is located
-packageDirectory: .
-
-buildCommand: npm run build  # Command to build your project
-
-publishDirectory: build/gh-pages  # Directory where built files are placed for deployment
-
-functionsDirectory: build/netlify/functions  # Directory for serverless functions (if applicable)
-
-deployLogVisibility: public  # Visibility of deployment logs
-
-# Build status visibility (if applicable)
-# buildStatus:  # Specify if there's a specific status setting you need
-
+  return {
+    statusCode: 200,
+    body: JSON.stringify(data),
+  };
+};
