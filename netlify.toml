@@ -1,0 +1,9 @@
+
+[[redirects]]
+  from = "/*"
+  to = "/"
+  status = 200
+
+  [gh-pages]
+  command = "npm run build"
+  publish = "gh-pages" # or the directory where your build artifacts are located
